@@ -1,0 +1,19 @@
+<% @page_title = "loginapp | Patient Register" %>
+<div class="Patient_Registration">
+<h1>Patient Registration</h1>
+<%= form_for(:patient, :url => {:controller => 'patient', :action => 'create'}) do |f| %>
+<p> Patient's Name:</br> <%= f.text_field :patient_name%> </p>
+<p> Date of Birth:</br> <%= f.date_select :date_of_birth, :start_year => Date.current.year, :end_year => 1920%> </p>
+<p> Gender:</br> <%= f.select :gender,  Patient::GENDER_TYPES %>
+<p> Address:</br> <%= f.text_area :address, :rows => "10"%> </p>
+<p> PIN:</br> <%= f.text_field :pin%></p>
+<%= f.submit :Register %>
+<% end %>
+<% if @patient.errors.any? %>
+<ul class="Signup_Errors">
+<% for message_error in @patient.errors.full_messages %>
+<li>* <%= message_error %></li>
+<% end %>
+</ul>
+<% end %>
+</div> 
