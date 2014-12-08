@@ -13,7 +13,7 @@ class UserController < ApplicationController
 			flash[:notice] = "Form is invalid"
 			flash[:color]= "invalid"
 		end
-	render "new"
+	redirect_to :controller => 'session', :action => 'login'
 	end
 
 	def user_params

@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   post 'patient/create'
 
   get 'patient/profile'
+  get 'patient/edit'
+  post 'patient/update'
 
   #get 'users/new'
 

@@ -1,7 +1,5 @@
 class User < ActiveRecord::Base
-  #attr_accessor :username
-  #validates :first_name
-  #validates :last_name
+  has_many :patients
   EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, :uniqueness => true, format: { with: EMAIL_REGEX }
   validates :username, :uniqueness =>true

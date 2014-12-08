@@ -1,5 +1,5 @@
 class CreatePatients < ActiveRecord::Migration
-  require 'uuid'
+  #require 'uuid'
   def up
     create_table :patients do |t|
     	#t.string '@uuid', :primary => true
@@ -8,7 +8,7 @@ class CreatePatients < ActiveRecord::Migration
     	t.string 'gender', :limit => 20
     	t.text 'address'
     	t.string 'pin'
-      #belongs_to :user
+      #t.integer 'user' 
 
     end
   end

@@ -1,2 +1,10 @@
-<h1>Patient#profile</h1>
-<p>Find me in app/views/patient/profile.html.erb</p>
+<% @page_title = "loginapp | Patient Profile" %>
+<h1>Patient profile</h1>
+<p>
+<strong>Name :</strong> <%= @patient.patient_name %><br />
+<strong>DOB:</strong> <%= @patient.date_of_birth %><br />
+<strong>Gender:</strong> <%= @patient.gender %><br />
+<strong>Address:</strong> <%= @patient.address %><br />
+<strong>PIN:</strong> <%= @patient.pin %><br />
+</p>
+<%= link_to 'Back', {:controller => 'session',:action => 'home'} %>

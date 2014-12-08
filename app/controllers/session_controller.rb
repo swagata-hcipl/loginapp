@@ -21,6 +21,7 @@ class SessionController < ApplicationController
   end
 
   def profile
+    @patients = Patient.all
   end
 
   def setting
@@ -32,6 +33,6 @@ class SessionController < ApplicationController
   def logout
 		session[:user_id] = nil
 		redirect_to :action => 'login'
-  end 
+  end
 
 end

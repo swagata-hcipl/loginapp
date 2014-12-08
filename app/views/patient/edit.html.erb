@@ -1,0 +1,11 @@
+<% @page_title = "loginapp | Patient Edit" %>
+<div class="Patient_Edit">
+<h1>Patient Edit</h1>
+<%= form_for(:patient, :url => {:controller => 'patient', :action => 'update', :id => @patient}) do |f| %>
+<p> Patient's Name:</br> <%= f.text_field :patient_name%> </p>
+<p> Date of Birth:</br> <%= f.date_select :date_of_birth, :start_year => Date.current.year, :end_year => 1920 %> </p>
+<p> Gender:</br> <%= f.select :gender,  Patient::GENDER_TYPES %>
+<p> Address:</br> <%= f.text_area :address, :rows => "10"%> </p>
+<p> PIN:</br> <%= f.text_field :pin%></p>
+<%= f.submit :update %>
+<% end %>
